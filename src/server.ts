@@ -30,8 +30,8 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
   /**************************************************************************** */
 
   //! END @TODO1
-  app.get('/filteredimage',async(req,res)=>{
-  const {image_url}=req.query;
+  app.get('/filteredimage',async(req:express.Request,res:express.Response)=>{
+  const {image_url}: { image_url: string }=req.query;
       //    1. validate the image_url query
       
    if(!image_url )return res.status(400).send({auth:false, message: ' image_url should be found !!' });
